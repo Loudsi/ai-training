@@ -20,8 +20,10 @@ import java.util.stream.Collectors;
 
 public class TreeBasedTrainerRunnable<Context, Config> extends AbstractControlledRunnable implements ITrainerRunnable<Config, Node<LearningRunsResult<Config>>> {
 
-    public static final int VIABLE_SCORE_RESULT = 3;
     private final Logger logger = LoggerFactory.getLogger(TreeBasedTrainerRunnable.class);
+
+    public static final int VIABLE_SCORE_RESULT_MULTIPLICATION = 3;
+
     private final IGeneticManager<Context, Config> manager;
     private final IGeneticConfigurationGenerator<Config> configurationGenerator;
     private final IGeneticTrainingRunner<Context, Config> trainingRunner;
@@ -98,13 +100,13 @@ public class TreeBasedTrainerRunnable<Context, Config> extends AbstractControlle
             //Handle Root
             final List<Node<LearningRunsResult<Config>>> viable = nodes.stream()
                     .filter(node -> !node.isRoot())
-                    .filter(node -> node.getData().getScore() >= bestResult.getScore() / VIABLE_SCORE_RESULT)
+                    .filter(node -> node.getData().getScore() >= bestResult.getScore() / VIABLE_SCORE_RESULT_MULTIPLICATION)
                     .collect(Collectors.toList());
 
             //Add Root
             viable.addAll(nodes.stream()
                     .filter(Node::isRoot)
-                    .filter(root -> 0 >= bestResult.getScore() / VIABLE_SCORE_RESULT)
+                    .filter(root -> 0 >= bestResult.getScore() / VIABLE_SCORE_RESULT_MULTIPLICATION)
                     .collect(Collectors.toList()));
 
             return viable;

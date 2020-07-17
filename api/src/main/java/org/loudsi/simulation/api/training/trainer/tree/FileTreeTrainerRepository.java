@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.loudsi.common.tree.Node;
 import org.loudsi.simulation.api.training.runner.LearningRunsResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileReader;
@@ -15,6 +17,8 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
 public class FileTreeTrainerRepository<Config> {
+
+    private final Logger logger = LoggerFactory.getLogger(FileTreeTrainerRepository.class);
 
     public static final String BESTS_RESULTS_FOLDER = "\\bests";
     public static final String ALL_RESULTS_JSON_FILE = "\\allResults.json";
@@ -45,7 +49,7 @@ public class FileTreeTrainerRepository<Config> {
             e.printStackTrace();
         }
 
-        System.out.println("Results saved in " + rootSaveFolder.getPath());
+        logger.info("Results saved in " + rootSaveFolder.getPath());
     }
 
     public Node<LearningRunsResult<Config>> loadSavedTree() {
