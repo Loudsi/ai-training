@@ -2,8 +2,8 @@ package org.loudsi.visual.implem.ant.engine.visual;
 
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-import org.loudsi.simulation.implem.ant.context.AntColony;
-import org.loudsi.simulation.implem.ant.context.Pheromone;
+import org.loudsi.simulation.implem.genetic.ant.context.AntColony;
+import org.loudsi.simulation.implem.genetic.ant.context.Pheromone;
 import org.loudsi.visual.jfx.renderer.DrawUtils;
 
 import java.util.HashMap;

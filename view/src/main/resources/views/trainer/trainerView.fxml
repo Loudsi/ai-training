@@ -10,7 +10,8 @@
             onAction="#handlePauseResumeTrainer"/>
 
     <HBox>
-        <VBox fx:id="trainerCanvasHolder" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
+        <VBox fx:id="trainerCanvasHolder"
+              style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
         </VBox>
     </HBox>
 

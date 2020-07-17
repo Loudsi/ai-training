@@ -1,7 +1,7 @@
 package org.loudsi.visual.adapter.engine;
 
 import javafx.scene.canvas.Canvas;
-import org.loudsi.simulation.api.engine.IGeneticAlgoRunnable;
+import org.loudsi.simulation.api.algo.genetic.IGeneticEngineRunnable;
 import org.loudsi.simulation.api.runnables.RunnableStatus;
 import org.loudsi.visual.adapter.IVisualRunnerAdapter;
 import org.loudsi.visual.jfx.renderer.ICanvasName;
@@ -12,9 +12,9 @@ import java.util.Map;
 public abstract class AbstractEngineAdapter<Context, Config> implements IVisualRunnerAdapter {
 
     private final IRenderer<Context> renderer;
-    private final IGeneticAlgoRunnable<Context, Config> engine;
+    private final IGeneticEngineRunnable<Context, Config> engine;
 
-    public AbstractEngineAdapter(IRenderer<Context> renderer, IGeneticAlgoRunnable<Context, Config> engine) {
+    public AbstractEngineAdapter(IRenderer<Context> renderer, IGeneticEngineRunnable<Context, Config> engine) {
         this.renderer = renderer;
         this.engine = engine;
     }

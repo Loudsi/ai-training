@@ -26,7 +26,7 @@ public class FileTreeTrainerRepository<Config> {
     public FileTreeTrainerRepository(String saveFolderPath) {
         rootSaveFolder = new File(saveFolderPath);
     }
-    ;
+
 
     public void saveResults(LearningRunsResult<Config> bestRunResults, Node<LearningRunsResult<Config>> treeResult) {
         rootSaveFolder.mkdirs();

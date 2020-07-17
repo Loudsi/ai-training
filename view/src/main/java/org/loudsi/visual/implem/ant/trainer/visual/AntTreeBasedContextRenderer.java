@@ -8,7 +8,7 @@ import org.loudsi.common.Pair;
 import org.loudsi.common.tree.Node;
 import org.loudsi.common.tree.NodeHelper;
 import org.loudsi.simulation.api.training.runner.LearningRunsResult;
-import org.loudsi.simulation.implem.ant.config.AntEngineConfig;
+import org.loudsi.simulation.implem.genetic.ant.config.AntEngineGeneticConfig;
 import org.loudsi.visual.jfx.renderer.DrawUtils;
 import org.loudsi.visual.jfx.renderer.ICanvasName;
 import org.loudsi.visual.jfx.renderer.IRenderer;
@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Component
-public class AntTreeBasedContextRenderer implements IRenderer<Node<LearningRunsResult<AntEngineConfig>>> {
+public class AntTreeBasedContextRenderer implements IRenderer<Node<LearningRunsResult<AntEngineGeneticConfig>>> {
 
     public static final double WIDTH = 1000;
     public static final double HEIGHT = 700;
@@ -35,12 +35,12 @@ public class AntTreeBasedContextRenderer implements IRenderer<Node<LearningRunsR
     }
 
     @Override
-    public void drawVisuals(Node<LearningRunsResult<AntEngineConfig>> context, Map<ICanvasName, Canvas> canvas) {
+    public void drawVisuals(Node<LearningRunsResult<AntEngineGeneticConfig>> context, Map<ICanvasName, Canvas> canvas) {
         final Optional<Canvas> mainCanvas = Optional.ofNullable(canvas.get(ATCanvas.MAIN));
         mainCanvas.ifPresent(mainCanva -> this.drawMainCanvas(context, mainCanva));
     }
 
-    private void drawMainCanvas(Node<LearningRunsResult<AntEngineConfig>> context, Canvas canvas) {
+    private void drawMainCanvas(Node<LearningRunsResult<AntEngineGeneticConfig>> context, Canvas canvas) {
         DrawUtils.clearCanvas(canvas);
         final GraphicsContext context2D = canvas.getGraphicsContext2D();
         if (context != null) {
@@ -50,7 +50,7 @@ public class AntTreeBasedContextRenderer implements IRenderer<Node<LearningRunsR
         }
     }
 
-    private void drawNodes(Node<LearningRunsResult<AntEngineConfig>> node, GraphicsContext context2D, Map<Integer, Integer> drowedByDepth, Map<Integer, Integer> childByDepth, int depth, Pair<Double, Double> parentPosition) {
+    private void drawNodes(Node<LearningRunsResult<AntEngineGeneticConfig>> node, GraphicsContext context2D, Map<Integer, Integer> drowedByDepth, Map<Integer, Integer> childByDepth, int depth, Pair<Double, Double> parentPosition) {
         if (node.isLeaf()) {
             context2D.setFill(Color.GREEN);
         } else {

@@ -1,37 +1,37 @@
 {
-  "config" : {
-    "antBehaviorConfig" : {
-      "BRING_BACK_FOOD" : {
-        "toColonyWeight" : -51.22001870849314,
-        "inertiaWeight" : 48.02871547089694,
-        "randomness" : -24.67619860445657,
-        "antActionWeight" : {
-          "BRING_BACK_FOOD" : -60.694223813686094,
-          "FIND_FOOD" : -0.9500070187156915
+  "config": {
+    "antBehaviorConfig": {
+      "BRING_BACK_FOOD": {
+        "toColonyWeight": -51.22001870849314,
+        "inertiaWeight": 48.02871547089694,
+        "randomness": -24.67619860445657,
+        "antActionWeight": {
+          "BRING_BACK_FOOD": -60.694223813686094,
+          "FIND_FOOD": -0.9500070187156915
         }
       },
-      "FIND_FOOD" : {
-        "toColonyWeight" : -56.80118244523467,
-        "inertiaWeight" : -39.543742990178245,
-        "randomness" : 66.27510011670014,
-        "antActionWeight" : {
-          "BRING_BACK_FOOD" : 32.27529704770057,
-          "FIND_FOOD" : 41.5550183646271
+      "FIND_FOOD": {
+        "toColonyWeight": -56.80118244523467,
+        "inertiaWeight": -39.543742990178245,
+        "randomness": 66.27510011670014,
+        "antActionWeight": {
+          "BRING_BACK_FOOD": 32.27529704770057,
+          "FIND_FOOD": 41.5550183646271
         }
       }
     },
-    "antScentDetectionRadiusConfig" : {
-      "BRING_BACK_FOOD" : 0.45584784708184145,
-      "FIND_FOOD" : 27.4832444448221
+    "antScentDetectionRadiusConfig": {
+      "BRING_BACK_FOOD": 0.45584784708184145,
+      "FIND_FOOD": 27.4832444448221
     },
-    "antPheromoneDepositFrequencyConfig" : {
-      "BRING_BACK_FOOD" : 28,
-      "FIND_FOOD" : 46
+    "antPheromoneDepositFrequencyConfig": {
+      "BRING_BACK_FOOD": 28,
+      "FIND_FOOD": 46
     },
-    "antPheromoneStrenghtConfig" : {
-      "BRING_BACK_FOOD" : -74,
-      "FIND_FOOD" : -7
+    "antPheromoneStrenghtConfig": {
+      "BRING_BACK_FOOD": -74,
+      "FIND_FOOD": -7
     }
   },
-  "score" : 0.0
+  "score": 0.0
 }

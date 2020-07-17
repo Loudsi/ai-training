@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.loudsi.visual.adapter.IVisualRunnerAdapter;
 import org.loudsi.visual.adapter.trainer.AbstractTrainerAdapter;

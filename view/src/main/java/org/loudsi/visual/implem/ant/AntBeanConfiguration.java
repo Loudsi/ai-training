@@ -1,16 +1,16 @@
 package org.loudsi.visual.implem.ant;
 
-import org.loudsi.simulation.api.ai.genetic.ConfigLoader;
-import org.loudsi.simulation.api.engine.BaseRunnable;
-import org.loudsi.simulation.api.engine.IGeneticAlgoRunnable;
+import org.loudsi.simulation.api.algo.genetic.GeneticConfigLoader;
+import org.loudsi.simulation.api.algo.genetic.IGeneticEngineRunnable;
+import org.loudsi.simulation.api.runnables.BaseRunnable;
 import org.loudsi.simulation.api.training.trainer.tree.FileTreeTrainerRepository;
-import org.loudsi.simulation.api.training.trainer.tree.TreeBasedEngineTrainer;
-import org.loudsi.simulation.implem.ant.AntContextBuilder;
-import org.loudsi.simulation.implem.ant.config.AntConfigGenerator;
-import org.loudsi.simulation.implem.ant.config.AntEngineConfig;
-import org.loudsi.simulation.implem.ant.context.AntContext;
-import org.loudsi.simulation.implem.ant.manager.AntParametrizedGeneticManager;
-import org.loudsi.simulation.implem.ant.trainer.AntFoodBasedParallelRunner;
+import org.loudsi.simulation.api.training.trainer.tree.TreeBasedTrainerRunnable;
+import org.loudsi.simulation.implem.genetic.ant.AntContextBuilder;
+import org.loudsi.simulation.implem.genetic.ant.config.AntConfigGenerator;
+import org.loudsi.simulation.implem.genetic.ant.config.AntEngineGeneticConfig;
+import org.loudsi.simulation.implem.genetic.ant.context.AntContext;
+import org.loudsi.simulation.implem.genetic.ant.manager.AntParametrizedGeneticManager;
+import org.loudsi.simulation.implem.genetic.ant.trainer.AntFoodBasedParallelRunnerGenetic;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,20 +19,20 @@ public class AntBeanConfiguration {
 
 
     @Bean
-    protected IGeneticAlgoRunnable<AntContext, AntEngineConfig> buildEngine() {
+    protected IGeneticEngineRunnable<AntContext, AntEngineGeneticConfig> buildEngine() {
         return new BaseRunnable<>(
                 AntContextBuilder.buildAntContext(),
-                ConfigLoader.loadFromResource("config/ant/config.json", AntEngineConfig.class),
+                GeneticConfigLoader.loadFromResource("config/ant/config.json", AntEngineGeneticConfig.class),
                 new AntParametrizedGeneticManager()
         );
     }
 
     @Bean
-    protected TreeBasedEngineTrainer<AntContext, AntEngineConfig> trainer() {
-        return new TreeBasedEngineTrainer<>(
+    protected TreeBasedTrainerRunnable<AntContext, AntEngineGeneticConfig> trainer() {
+        return new TreeBasedTrainerRunnable<>(
                 new AntParametrizedGeneticManager(),
                 new AntConfigGenerator(),
-                new AntFoodBasedParallelRunner(),
+                new AntFoodBasedParallelRunnerGenetic(),
                 new FileTreeTrainerRepository<>("C:\\Development\\sources\\simulation\\trainerSave"),
                 AntContextBuilder.buildAntContext());
     }

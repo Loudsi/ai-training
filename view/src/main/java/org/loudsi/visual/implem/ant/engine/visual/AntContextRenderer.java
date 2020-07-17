@@ -3,10 +3,10 @@ package org.loudsi.visual.implem.ant.engine.visual;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import org.loudsi.simulation.implem.ant.context.Ant;
-import org.loudsi.simulation.implem.ant.context.AntColony;
-import org.loudsi.simulation.implem.ant.context.AntContext;
-import org.loudsi.simulation.implem.ant.context.AntFood;
+import org.loudsi.simulation.implem.genetic.ant.context.Ant;
+import org.loudsi.simulation.implem.genetic.ant.context.AntColony;
+import org.loudsi.simulation.implem.genetic.ant.context.AntContext;
+import org.loudsi.simulation.implem.genetic.ant.context.AntFood;
 import org.loudsi.visual.jfx.renderer.DrawUtils;
 import org.loudsi.visual.jfx.renderer.ICanvasName;
 import org.loudsi.visual.jfx.renderer.IRenderer;
