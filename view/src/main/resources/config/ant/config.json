@@ -1,0 +1,34 @@
+{
+  "antBehaviorConfig" : {
+    "BRING_BACK_FOOD" : {
+      "toColonyWeight" : 29.461625037487188,
+      "inertiaWeight" : 72.01877015991272,
+      "randomness" : 10.666179657099374,
+      "antActionWeight" : {
+        "BRING_BACK_FOOD" : 6.08850864203302,
+        "FIND_FOOD" : 44.758523527664
+      }
+    },
+    "FIND_FOOD" : {
+      "toColonyWeight" : -33.48409267392323,
+      "inertiaWeight" : -7.846195355968731,
+      "randomness" : 30.51313414604882,
+      "antActionWeight" : {
+        "BRING_BACK_FOOD" : 68.70215108979379,
+        "FIND_FOOD" : 30.676646084401934
+      }
+    }
+  },
+  "antScentDetectionRadiusConfig" : {
+    "BRING_BACK_FOOD" : 3.411762079059973,
+    "FIND_FOOD" : 70.97799713438903
+  },
+  "antPheromoneDepositFrequencyConfig" : {
+    "BRING_BACK_FOOD" : -11,
+    "FIND_FOOD" : 43
+  },
+  "antPheromoneStrenghtConfig" : {
+    "BRING_BACK_FOOD" : 58,
+    "FIND_FOOD" : -3
+  }
+}

@@ -1,0 +1,13 @@
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<TabPane xmlns:fx="http://javafx.com/fxml"
+         fx:controller="org.loudsi.visual.views.BaseController" tabClosingPolicy="UNAVAILABLE">
+    <tabs>
+        <Tab fx:id="engineTab" text="Engine">
+            <fx:include fx:id="engine" source="engine/engineView.fxml"/>
+        </Tab>
+        <Tab fx:id="trainerTab" text="Trainer">
+            <fx:include fx:id="trainer" source="trainer/trainerView.fxml"/>
+        </Tab>
+    </tabs>
+</TabPane>

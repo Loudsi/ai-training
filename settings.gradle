@@ -1,0 +1,4 @@
+rootProject.name = 'simulation'
+include 'api',
+        'impl',
+        'view'

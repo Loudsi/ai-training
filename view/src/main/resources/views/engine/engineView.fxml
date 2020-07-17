@@ -1,0 +1,22 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111"
+      fx:controller="org.loudsi.visual.views.engine.EngineController">
+
+
+    <Button fx:id="engineStartStopButton" text="Start engine"
+            onAction="#handleStartStopEngine"/>
+
+    <Button fx:id="enginePauseResumeButton" text="Pause engine"
+            onAction="#handlePauseResumeEngine"/>
+
+    <HBox>
+        <VBox fx:id="engineCanvasHolder"
+              style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;"/>
+        <VBox fx:id="canvasSelector"
+              style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;"></VBox>
+    </HBox>
+
+
+</VBox>

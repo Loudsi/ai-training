@@ -1,0 +1,17 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111"
+      fx:controller="org.loudsi.visual.views.training.TrainingController">
+    <Button fx:id="trainerStartStopButton" text="Start trainer"
+            onAction="#handleStartStopTrainer"/>
+
+    <Button fx:id="trainerPauseResumeButton" text="Pause trainer"
+            onAction="#handlePauseResumeTrainer"/>
+
+    <HBox>
+        <VBox fx:id="trainerCanvasHolder" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
+        </VBox>
+    </HBox>
+
+</VBox>
