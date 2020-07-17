@@ -1,14 +1,12 @@
-package org.loudsi.simulation.api.training.trainer.tree;
+package org.loudsi.simulation.api.algo.genetic;
 
 import org.loudsi.common.RandomHelper;
 import org.loudsi.common.tree.Node;
 import org.loudsi.common.tree.NodeHelper;
-import org.loudsi.simulation.api.algo.genetic.IGeneticConfigurationGenerator;
-import org.loudsi.simulation.api.algo.genetic.IGeneticManager;
 import org.loudsi.simulation.api.runnables.AbstractControlledRunnable;
 import org.loudsi.simulation.api.training.ITrainerRunnable;
-import org.loudsi.simulation.api.training.runner.IGeneticTrainingRunner;
-import org.loudsi.simulation.api.training.runner.LearningRunsResult;
+import org.loudsi.simulation.api.training.LearningRunsResult;
+import org.loudsi.simulation.api.training.FileTreeTrainerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

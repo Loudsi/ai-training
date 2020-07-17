@@ -1,4 +1,4 @@
-package org.loudsi.simulation.api.training.runner;
+package org.loudsi.simulation.api.training;
 
 public class LearningRunsResult<K> {
 

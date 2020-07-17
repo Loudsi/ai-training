@@ -26,7 +26,7 @@ public abstract class AbstractControlledRunnable implements IControlledRunnable 
                 }
 
                 if (getStatus().equals(RunnableStatus.PAUSED)) {
-                    //TODO improve this to have non bloquing operation
+                    //TODO improve this to have non blocking operation
                     Thread.sleep(500);
                 } else {
                     this.doRunnableLogic(this.cycle);

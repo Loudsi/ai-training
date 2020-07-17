@@ -1,8 +1,8 @@
 package org.loudsi.simulation.implem.genetic.ant.trainer;
 
 import org.loudsi.simulation.api.algo.genetic.IGeneticEngineRunnable;
-import org.loudsi.simulation.api.training.runner.LearningRunsResult;
-import org.loudsi.simulation.api.training.runner.parallele.ParallelTrainerRunnerGenetic;
+import org.loudsi.simulation.api.training.LearningRunsResult;
+import org.loudsi.simulation.api.algo.genetic.ParallelTrainerRunnerGenetic;
 import org.loudsi.simulation.implem.genetic.ant.config.AntEngineGeneticConfig;
 import org.loudsi.simulation.implem.genetic.ant.context.AntColony;
 import org.loudsi.simulation.implem.genetic.ant.context.AntContext;

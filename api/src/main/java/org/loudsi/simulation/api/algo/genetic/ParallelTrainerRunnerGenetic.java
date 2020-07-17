@@ -1,11 +1,8 @@
-package org.loudsi.simulation.api.training.runner.parallele;
+package org.loudsi.simulation.api.algo.genetic;
 
 import org.loudsi.common.Cloner;
-import org.loudsi.simulation.api.algo.genetic.IGeneticEngineRunnable;
-import org.loudsi.simulation.api.algo.genetic.IGeneticManager;
 import org.loudsi.simulation.api.runnables.BaseRunnable;
-import org.loudsi.simulation.api.training.runner.IGeneticTrainingRunner;
-import org.loudsi.simulation.api.training.runner.LearningRunsResult;
+import org.loudsi.simulation.api.training.LearningRunsResult;
 
 import java.util.Collection;
 import java.util.HashMap;

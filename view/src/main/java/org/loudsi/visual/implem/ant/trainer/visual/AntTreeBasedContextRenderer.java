@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import org.loudsi.common.Pair;
 import org.loudsi.common.tree.Node;
 import org.loudsi.common.tree.NodeHelper;
-import org.loudsi.simulation.api.training.runner.LearningRunsResult;
+import org.loudsi.simulation.api.training.LearningRunsResult;
 import org.loudsi.simulation.implem.genetic.ant.config.AntEngineGeneticConfig;
 import org.loudsi.visual.jfx.renderer.DrawUtils;
 import org.loudsi.visual.jfx.renderer.ICanvasName;

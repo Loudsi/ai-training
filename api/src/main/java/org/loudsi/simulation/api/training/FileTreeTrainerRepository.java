@@ -1,4 +1,4 @@
-package org.loudsi.simulation.api.training.trainer.tree;
+package org.loudsi.simulation.api.training;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -6,7 +6,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.loudsi.common.tree.Node;
-import org.loudsi.simulation.api.training.runner.LearningRunsResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
-public class FileTreeTrainerRepository<Config> {
+public class FileTreeTrainerRepository<TrainingResult> {
 
     private final Logger logger = LoggerFactory.getLogger(FileTreeTrainerRepository.class);
 
@@ -32,7 +31,7 @@ public class FileTreeTrainerRepository<Config> {
     }
 
 
-    public void saveResults(LearningRunsResult<Config> bestRunResults, Node<LearningRunsResult<Config>> treeResult) {
+    public void saveResults(LearningRunsResult<TrainingResult> bestRunResults, Node<LearningRunsResult<TrainingResult>> treeResult) {
         rootSaveFolder.mkdirs();
         final File savedBestFolder = new File(rootSaveFolder, BESTS_RESULTS_FOLDER);
         savedBestFolder.mkdirs();
@@ -52,7 +51,7 @@ public class FileTreeTrainerRepository<Config> {
         logger.info("Results saved in " + rootSaveFolder.getPath());
     }
 
-    public Node<LearningRunsResult<Config>> loadSavedTree() {
+    public Node<LearningRunsResult<TrainingResult>> loadSavedTree() {
         if (rootSaveFolder.exists()) {
             final File saveFile = new File(rootSaveFolder, ALL_RESULTS_JSON_FILE);
             if (saveFile.exists()) {
