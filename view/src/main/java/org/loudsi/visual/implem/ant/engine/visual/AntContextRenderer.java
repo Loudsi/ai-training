@@ -19,7 +19,7 @@ import java.util.Optional;
 @Component
 public class AntContextRenderer implements IRenderer<AntContext> {
 
-    private HashMap<AntCanvasNames, Integer> renderNumber = new HashMap<>();
+    private final HashMap<AntCanvasNames, Integer> renderNumber = new HashMap<>();
 
     @Override
     public HashMap<ICanvasName, Canvas> registerCanvas() {
@@ -67,12 +67,10 @@ public class AntContextRenderer implements IRenderer<AntContext> {
     private void drawPheromones(AntContext world, Canvas pheromonesCanvas) {
         final GraphicsContext gc = pheromonesCanvas.getGraphicsContext2D();
         DrawUtils.clearCanvas(pheromonesCanvas);
-        world.getColonies().forEach(antColony -> {
-            antColony.getPheromones().forEach(pheromone -> {
-                gc.setFill(AntColorManager.getPheromoneColor(antColony, pheromone));
-                gc.fillOval(pheromone.getPosition().getX(), pheromone.getPosition().getY(), 2, 2);
-            });
-        });
+        world.getColonies().forEach(antColony -> antColony.getPheromones().forEach(pheromone -> {
+            gc.setFill(AntColorManager.getPheromoneColor(antColony, pheromone));
+            gc.fillOval(pheromone.getPosition().getX(), pheromone.getPosition().getY(), 2, 2);
+        }));
     }
 
     private void drawAnts(AntContext world, Canvas antCanvas) {

@@ -10,8 +10,8 @@ public abstract class NeuralNetLayer<T extends AbstractNeuron> {
 
     protected final String layerName;
     protected final List<T> neurons;
-    protected IActivationFunction activationFunction;
-    protected BiasNeuron bias;
+    protected final IActivationFunction activationFunction;
+    protected final BiasNeuron bias;
 
     public NeuralNetLayer(String layerName, List<T> neurons, IActivationFunction activationFunction, BiasNeuron bias) {
         this.layerName = layerName;

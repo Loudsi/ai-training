@@ -5,7 +5,7 @@ import javafx.animation.AnimationTimer;
 public class FXUtils {
     private static long lastUpdate = 0;
     private static int index = 0;
-    private static double[] frameRates = new double[100];
+    private static final double[] frameRates = new double[100];
 
     static {
         AnimationTimer frameRateMeter = new AnimationTimer() {
@@ -25,25 +25,17 @@ public class FXUtils {
         frameRateMeter.start();
     }
 
-    /**
-     * Returns the instantaneous FPS for the last frame rendered.
-     *
-     * @return
-     */
+
     public static double getInstantFPS() {
         return frameRates[index % frameRates.length];
     }
 
-    /**
-     * Returns the average FPS for the last 100 frames rendered.
-     *
-     * @return
-     */
+
     public static double getAverageFPS() {
         double total = 0.0d;
 
-        for (int i = 0; i < frameRates.length; i++) {
-            total += frameRates[i];
+        for (double frameRate : frameRates) {
+            total += frameRate;
         }
 
         return total / frameRates.length;

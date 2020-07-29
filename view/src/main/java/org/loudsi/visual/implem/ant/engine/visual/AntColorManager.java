@@ -10,8 +10,8 @@ import java.util.HashMap;
 
 public class AntColorManager {
 
-    private static HashMap<String, Color> colorByColoniesNames = new HashMap<>();
-    private static boolean multiColony = false;
+    private static final HashMap<String, Color> colorByColoniesNames = new HashMap<>();
+    private static final boolean multiColony = false;
 
     public static Color getColonyColor(AntColony colony) {
         if (multiColony) {
@@ -34,14 +34,11 @@ public class AntColorManager {
         if (multiColony) {
             return DrawUtils.copyWithOpacity(getColonyColor(antColony), 0.5);
         } else {
-            switch (pheromone.getPheromoneType()) {
-                case FIND_FOOD:
-                    return Color.BLUE;
-                case BRING_BACK_FOOD:
-                    return Color.GREEN;
-                default:
-                    return Color.RED;
-            }
+            return switch (pheromone.getPheromoneType()) {
+                case FIND_FOOD -> Color.BLUE;
+                case BRING_BACK_FOOD -> Color.GREEN;
+                default -> Color.RED;
+            };
         }
 
     }

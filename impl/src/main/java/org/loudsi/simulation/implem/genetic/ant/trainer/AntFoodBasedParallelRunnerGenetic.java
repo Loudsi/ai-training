@@ -36,5 +36,5 @@ public class AntFoodBasedParallelRunnerGenetic extends ParallelTrainerRunnerGene
         final double score = (foodCount * foodCount) / totalCycle * 100;
         return new LearningRunsResult<>(config, score);
     }
-};
+}
 

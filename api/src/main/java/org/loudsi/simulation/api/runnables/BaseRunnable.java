@@ -13,7 +13,7 @@ public class BaseRunnable<T, K> extends AbstractControlledRunnable implements IG
     private final K engineConfig;
     private final T context;
 
-    boolean isTrainingMode;
+    final boolean isTrainingMode;
 
     private K copiedEngineConfig;
     private T copiedContext;

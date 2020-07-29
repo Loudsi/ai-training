@@ -68,9 +68,7 @@ public class NeuralNetwork {
     }
 
     public void updateWeights(double learningRate) {
-        outputLayer.getNeurons().forEach(outputNeuron -> {
-            updateInputWeights(learningRate, outputNeuron);
-        });
+        outputLayer.getNeurons().forEach(outputNeuron -> updateInputWeights(learningRate, outputNeuron));
         hiddenLayers.forEach(hiddenLayer -> hiddenLayer.getNeurons().forEach(hiddenLayerNeuron -> {
             updateInputWeights(learningRate, hiddenLayerNeuron);
         }));

@@ -8,8 +8,8 @@ import java.util.Collection;
 public class Vector {
 
 
-    private double x;
-    private double y;
+    private final double x;
+    private final double y;
 
     public Vector(double x, double y) {
         this.x = x;

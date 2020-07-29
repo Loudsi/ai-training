@@ -12,12 +12,12 @@ import java.util.Set;
 
 class NeuralNetworkTrainerTest {
 
-    private NeuralNetworkBuilder neuralNetworkBuilder = new NeuralNetworkBuilder();
-    private TrainingDataBuilder trainingDataBuilder = new TrainingDataBuilder();
-    private NeuralNetworkTrainer neuralNetworkTrainer = new NeuralNetworkTrainer();
+    private final NeuralNetworkBuilder neuralNetworkBuilder = new NeuralNetworkBuilder();
+    private final TrainingDataBuilder trainingDataBuilder = new TrainingDataBuilder();
+    private final NeuralNetworkTrainer neuralNetworkTrainer = new NeuralNetworkTrainer();
 
     @Test
-    void trainFromData() throws JsonProcessingException {
+    void trainFromData() {
         final NeuralNetwork neuralNetwork = neuralNetworkBuilder.buildNeuralNetwork(
                 2,
                 4,

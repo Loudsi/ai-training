@@ -11,7 +11,7 @@ public class AntColony implements Serializable {
     private final String name;
     private final Position position;
     private final List<Ant> ants = new ArrayList<>();
-    private List<Pheromone> pheromones = new ArrayList<>();
+    private final List<Pheromone> pheromones = new ArrayList<>();
 
     private int colonyFood;
 

@@ -63,7 +63,7 @@ public class TreeBasedTrainerRunnable<Context, Config> extends AbstractControlle
     }
 
     @Override
-    protected void doRunnableLogic(int cycle) throws InterruptedException {
+    protected void doRunnableLogic(int cycle) {
 
         final List<Node<LearningRunsResult<Config>>> nodes = NodeHelper.getAllNodes(tree);
 
